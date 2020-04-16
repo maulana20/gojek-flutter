@@ -4,8 +4,8 @@ Repository berikut ini merupakan porting dari Gojek untuk Flutter
 | Method  | Result  |
 |---|---|
 | `loginPhone`  | Ok |
-| `loginGojek`  | In Progress |
-| `checkBalance`  | In Progress |
+| `loginGojek`  | Ok |
+| `checkBalance`  | Ok |
 | `checkWalletCode`  | In Progress |
 | `transferGopay`  | In Progress |
 
@@ -56,6 +56,15 @@ final QRID = (await gojek.checkWalletCode('<mobilePhoneTo>'))['QRID'];
 ovoid.authToken = authToken;
 final response = await gojek.transferGopay(QRID, PIN, '<amount>', '<description>');
 ```
+
+#### Contoh
+##### login
+- masukan nomor handphone
+- dialog OTP
+
+[![login](./screen/login.jpg)](./../../)
+##### menu utama
+[![home](./screen/home.jpg)](./../../)
 
 ### Author
 

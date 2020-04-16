@@ -52,7 +52,10 @@ class GojekFlutter {
 		if (![true].contains(response['success'])) return { 'code': response['errors'][0]['code'], 'message': response['errors'][0]['message'] };
 		
 		return {
-			'authToken'		: response['data']['access_token']
+			'fullName'			: response['data']['name'],
+			'email'				: response['data']['email_address'],
+			'phoneNumber'		: response['data']['phone_number'],
+			'authToken'			: response['data']['access_token']
 		};
 	}
 	
@@ -65,7 +68,9 @@ class GojekFlutter {
 		
 		if (![true].contains(response['success'])) return { 'code': response['errors'][0]['code'], 'message': response['errors'][0]['message'] };
 		
-		return {};
+		return {
+			'balance'			: response['data']['balance']
+		};
 	}
 	
 	Future checkWalletCode(String number) async {
